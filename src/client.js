@@ -9,7 +9,7 @@ var rl = readline.createInterface({
 
 rl.on('line', function(line){
     console.log(line);
-    if(line == "setup"){
+    if(line.split(" ")[0] == "setup"){
 		var options = {
 		    hostname: 'http://ed744996.ngrok.io',
 		    path: '/',
@@ -19,16 +19,16 @@ rl.on('line', function(line){
 		    }
 		};
 		// console.log(options);
-		  var client = new HTTPClient(options)
+		  var client = new HTTPClient(options);
 		  client.request('/api/gettoken', function (err, res, body) {
 		    console.log('error', err);
 		    console.log('response', res);
 		    console.log('body', JSON.parse(body.toString()).token);
 		    token = JSON.parse(body.toString()).token;
 		  });
-    }else if(line.split(":")[0] == "removed"){
+    }else if(line.split(" ")[0].split(":")[0] == "removed"){
     	 var  i = line.split(":")[1];
-    	 
+
 		 var options = {
 		    hostname: 'http://ed744996.ngrok.io',
 		    path: '/',
@@ -44,7 +44,7 @@ rl.on('line', function(line){
 		    console.log('response', res);
 		    console.log('body', body.toString());
 		  });
-    }else if(line.split(":")[0] == "deposit"){
+    }else if(line.split(" ")[0].split(":")[0] == "deposit"){
     	var  i = line.split(":")[1];
  		var options = {
 		    hostname: 'http://ed744996.ngrok.io',

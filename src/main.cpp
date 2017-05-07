@@ -15,7 +15,7 @@ int connect(int *desc_file){
 		std::cout << "Echec de l'ouverture du bus I2C\n";
 		return -1;
 	}
-	std::cout << "Bus ouvert\n";
+	std::cout << "Bus ouvert \n";
 	return 0;
 }
 
@@ -28,7 +28,7 @@ int scan(int *desc_file, char *content){
 	{
 		if(state = ioctl(*desc_file, I2C_SLAVE, addr) < 0)
 		{
-			std::cout << "Echec de l'acces au bus et de la communication avec l'esclave\n";
+			std::cout << "Echec de l'acces au bus et de la communication avec l'esclave \n";
 		}
 		else if(read(*desc_file, buffer, 1) < 0)
 		{
@@ -53,13 +53,13 @@ int diff(char* content_old, char* content_new)
 		if(content_old[i] != content_new[i])
 		{
 			nb++;
-			std::cout << "Cintre #" << i << ((content_old[i])? " Retiré" : " Ajouté") << std::endl;
+			std::cout << "Cintre #" << i << ((content_old[i])? " Retiré" : " Ajouté ") << std::endl;
 			if(content_old[i] == 1){
 				// Hanger just being removed
-				std::cout << "removed:" << i;
+				std::cout << "removed:" << i << " \n";
 			}else{
 				// Hanger just being deposit
-				std::cout << "deposit:" << i;
+				std::cout << "deposit:" << i << " \n";
 			}
 			content_old[i] = content_new[i];
 		}
@@ -74,7 +74,7 @@ int main()
 	char content_act[NB_HANGER] = "";
 	char content_new[NB_HANGER] = "Lul";
 
-	std::cout << "setup";
+	std::cout << "setup \n";
 
 	diff(content_act, content_new);
 	while(1)
