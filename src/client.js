@@ -17,15 +17,15 @@ rl.on('line', function(line){
 		    secure: false,
 		    method: 'GET',
 		    headers: {
-		      'Authorization': '8D0dZXMIBeiWSj7:YzDVJPRyIUp7DS0'
+		      'Authorization': new Buffer('8D0dZXMIBeiWSj7:YzDVJPRyIUp7DS0').toString('base64')
 		    }
-		}
-
+		};
+		console.log(options);
 		  var client = new HTTPClient(options)
 		  client.request('/api/getToken', function (err, res, body) {
-		    console.log('error', err)
-		    console.log('response', res)
-		    console.log('body', body.token)
+		    console.log('error', err);
+		    console.log('response', res);
+		    console.log('body', body);
 		    token = body.token;
 		  });
     }else if(line == "removed"){
@@ -36,14 +36,13 @@ rl.on('line', function(line){
 		    secure: false,
 		    method: 'PUT',
 		    body: {f_connected: false}
-		  }
+		  };
 
 		  var client = new HTTPClient(options)
 		  client.request('/api/hanger/:i&token='+token, function (err, res, body) {
-		    console.log('Example 1')
-		    console.log('error', err)
-		    console.log('response', res)
-		    console.log('body', body)
+		    console.log('error', err);
+		    console.log('response', res);
+		    console.log('body', body);
 		  });
     }else if(line == "deposit"){
  		var options = {
@@ -53,14 +52,13 @@ rl.on('line', function(line){
 		    secure: false,
 		    method: 'PUT',
 		    body: {f_connected: true}
-		  }
+		  };
 
 		  var client = new HTTPClient(options)
 		  client.request('/api/hanger/:i&token='+token, function (err, res, body) {
-		    console.log('Example 1')
-		    console.log('error', err)
-		    console.log('response', res)
-		    console.log('body', body)
+		    console.log('error', err);
+		    console.log('response', res);
+		    console.log('body', body);
 		  });
     }
 });

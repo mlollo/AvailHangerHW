@@ -4,10 +4,6 @@
 #include <linux/i2c-dev.h>
 #include <iostream>
 #include <vector>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "picohttpparser.h"
 
 #define FILENAME "/dev/i2c-1"
 #define NB_HANGER 128
@@ -63,13 +59,6 @@ int diff(char* content_old, char* content_new)
 				std::cout << "removed";
 			}else{
 				// Hanger just being deposit
-				// client::request request_("http://2bb05442.ngrok.io/api/hanger/:i?token="+token);
-				// client client_;
-				// // request << header("Content-Type", "application/x-www-form-urlencoded");
-				// request << body("f_onRail=true");
-				// client::response response_ = client_.put(request_,body);
-				// std::string body_ = body(response_);
-				// std::cout << "[REQUEST] put hanger : " + body_;
 				std::cout << "deposit";
 			}
 			content_old[i] = content_new[i];
@@ -85,12 +74,6 @@ int main()
 	char content_act[NB_HANGER] = "";
 	char content_new[NB_HANGER] = "Lul";
 
-	// client::request request_("http://2bb05442.ngrok.io/api/getToken/");
-	// request_ << header("Authorization", "8D0dZXMIBeiWSj7:YzDVJPRyIUp7DS0");
-	// client client_;
-	// client::response response_ = client_.get(request_);
-	// std::string body_ = body(response_);
-	// std::cout << "[REQUEST] Token : " + body_;
 	std::cout << "setup";
 
 	diff(content_act, content_new);
