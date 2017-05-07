@@ -40,7 +40,7 @@ rl.on('line', function(line){
 		  client.request('/api/hanger/:i&token='+token, function (err, res, body) {
 		    console.log('error', err);
 		    console.log('response', res);
-		    console.log('body', JSON.parse(body.toString()));
+		    console.log('body', body.toString());
 		  });
     }else if(line == "deposit"){
  		var options = {
@@ -56,7 +56,7 @@ rl.on('line', function(line){
 		  client.request('/api/hanger/:i&token='+token, function (err, res, body) {
 		    console.log('error', err);
 		    console.log('response', res);
-		    console.log('body', JSON.parse(body.toString()));
+		    console.log('body', body.toString());
 		  });
     }
 });
