@@ -39,9 +39,9 @@ endif()
 
 # Always use Boost's shared libraries.
 set(Boost_USE_STATIC_LIBS OFF)
-SET (BOOST_ROOT "~/AvailHangerHW/boost")
-SET (BOOST_INCLUDEDIR "~/AvailHangerHW/boost")
-SET (BOOST_LIBRARYDIR "~/AvailHangerHW/libs")
+#SET (BOOST_ROOT "~/AvailHangerHW/boost")
+#SET (BOOST_INCLUDEDIR "~/AvailHangerHW/boost")
+#SET (BOOST_LIBRARYDIR "~/AvailHangerHW/libs")
 
 # We need this for all tests to use the dynamic version.
 add_definitions(-DBOOST_TEST_DYN_LINK)
