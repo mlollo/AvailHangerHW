@@ -65,17 +65,8 @@ int diff(char* content_old, char* content_new)
 				// Hanger just being removed
 				client::request request_("http://2bb05442.ngrok.io/api/hanger/:i?token="+token);
 				client client_;
-				client::response response_ = client_.get(request_);
-				std::string body_ = body(response_);
-				std::cout << "[REQUEST] get hanger : " + body_;
-				// f_occ = body_.f_occ + 1;
-				// std::cout << f_occ;
-
-				// Update
-				client::request request_("http://2bb05442.ngrok.io/api/hanger/:i?token="+token);
-				client client_;
 				// request << header("Content-Type", "application/x-www-form-urlencoded");
-				request << body("f_occ="+f_occ+"&"+"f_onRail=false");
+				request << body("f_onRail=false");
 				client::response response_ = client_.put(request_,body);
 				std::string body_ = body(response_);
 				std::cout << "[REQUEST] put hanger : " + body_;
