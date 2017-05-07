@@ -56,10 +56,10 @@ int diff(char* content_old, char* content_new)
 			std::cout << "Cintre #" << i << ((content_old[i])? " Retiré" : " Ajouté") << std::endl;
 			if(content_old[i] == 1){
 				// Hanger just being removed
-				std::cout << "removed";
+				std::cout << "removed:" << i;
 			}else{
 				// Hanger just being deposit
-				std::cout << "deposit";
+				std::cout << "deposit:" << i;
 			}
 			content_old[i] = content_new[i];
 		}

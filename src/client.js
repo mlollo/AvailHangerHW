@@ -26,7 +26,9 @@ rl.on('line', function(line){
 		    console.log('body', JSON.parse(body.toString()).token);
 		    token = JSON.parse(body.toString()).token;
 		  });
-    }else if(line == "removed"){
+    }else if(line.split(":")[0] == "removed"){
+    	 var  i = line.split(":")[1];
+    	 
 		 var options = {
 		    hostname: 'http://ed744996.ngrok.io',
 		    path: '/',
@@ -37,12 +39,13 @@ rl.on('line', function(line){
 		  };
 
 		  var client = new HTTPClient(options)
-		  client.request('/api/hanger/:i&token='+token, function (err, res, body) {
+		  client.request('/api/hanger/:'+i+'&token='+token, function (err, res, body) {
 		    console.log('error', err);
 		    console.log('response', res);
 		    console.log('body', body.toString());
 		  });
-    }else if(line == "deposit"){
+    }else if(line.split(":")[0] == "deposit"){
+    	var  i = line.split(":")[1];
  		var options = {
 		    hostname: 'http://ed744996.ngrok.io',
 		    path: '/',
@@ -53,7 +56,7 @@ rl.on('line', function(line){
 		  };
 
 		  var client = new HTTPClient(options)
-		  client.request('/api/hanger/:i&token='+token, function (err, res, body) {
+		  client.request('/api/hanger/:'+i+'&token='+token, function (err, res, body) {
 		    console.log('error', err);
 		    console.log('response', res);
 		    console.log('body', body.toString());
