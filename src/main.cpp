@@ -4,8 +4,8 @@
 #include <linux/i2c-dev.h>
 #include <iostream>
 #include <vector>
-#include "../lib/cpp-netlib-0.12.0-final/"
-
+#include "../lib/cpp-netlib-0.12.0-final/boost/network.hpp"
+#include "../lib/cpp-netlib-0.12.0-final/boost/network/protocol/http/client.hpp"
 
 #define FILENAME "/dev/i2c-1"
 #define NB_HANGER 128
