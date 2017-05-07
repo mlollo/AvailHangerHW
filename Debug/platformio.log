@@ -1,0 +1,22 @@
+﻿  [05/07/17 02:49:26] Processing attiny84 (upload_protocol: usbtiny, platform: atmelavr, board: attiny84, framework: arduino)
+  
+  Verbose mode can be enabled via `-v, --verbose` option
+  Collected 22 compatible libraries
+  Looking for dependencies...
+  Project does not have dependencies
+  Compiling .pioenvs\attiny84\src\main.o
+  Linking .pioenvs\attiny84\firmware.elf
+  Building .pioenvs\attiny84\firmware.hex
+  Calculating size .pioenvs\attiny84\firmware.elf
+  AVR Memory Usage
+  ----------------
+  Device: attiny84
+  
+  Program:     828 bytes (10.1% Full)
+  (.text + .data + .bootloader)
+  
+  Data:         54 bytes (10.5% Full)
+  (.data + .bss + .noinit)
+  
+  
+   [SUCCESS] Took 1.18 seconds 
