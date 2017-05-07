@@ -61,11 +61,14 @@ int diff(char* content_old, char* content_new)
 			std::cout << "Cintre #" << i << ((content_old[i])? " Retiré" : " Ajouté") << std::endl;
 			if(content_old[i] == 1){
 				// Hanger just being removed
-				client::request request_("http://127.0.0.1:8000/");
-				request_ << header("Connection", "close");
+				char token = "";
+				client::request request_("http://2bb05442.ngrok.io/api/getToken/");
+				request_ << header("Authorization", "8D0dZXMIBeiWSj7:YzDVJPRyIUp7DS0");
 				client client_;
 				client::response response_ = client_.get(request_);
 				std::string body_ = body(response_);
+				token = body_.token;
+				std::cout << token;
 			}
 			content_old[i] = content_new[i];
 		}
